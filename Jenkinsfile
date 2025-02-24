@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "Checkout the source code from the Git repository"
-                git https://github.com/tushar-dubey5/Jenkins.git'
+                git 'https://github.com/tushar-dubey5/Jenkins.git'
             }
         }
 
@@ -13,6 +13,21 @@ pipeline {
             steps {
                 echo "Execute build commands or scripts"
                 sh 'chmod u+x test.py'
+                sh './test.py'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Execute test commands or scripts"
+                //sh 'your-test-command-or-script.sh'
+            }
+        }
+
+        stage('Staging') {
+            steps {
+                echo "Copy artifacts to a staging area (e.g., for further testing)"
+                //sh 'cp -r build/* staging/'
             }
         }
 
