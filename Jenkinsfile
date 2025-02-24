@@ -16,8 +16,6 @@ pipeline {
             }
         }
 
-        }
-
         stage('Deploy') {
             steps {
                 echo "Deploy artifacts to a production server or environment"
